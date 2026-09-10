@@ -1,0 +1,37 @@
+.todo-item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.todo-item--box {
+    width: 100%;
+    border-radius: 8px;
+    border: 1px solid #17044a;
+    background: #17044a;
+    padding: 0.5rem 0.75rem;
+    box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    gap: 0.5rem;
+    justify-content: start;
+
+    p {
+        margin: 0;
+    }
+}
+
+.todo-item--trash {
+    padding: 0.5rem 0.75rem;
+}
+
+.trash-icon {
+    cursor: pointer;
+}
+
+.todo-item--checkbox {
+    accent-color: #17044a;
+    width: 18px;
+    height: 18px;
+}
