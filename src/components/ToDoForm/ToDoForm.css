@@ -1,0 +1,44 @@
+.todo-form {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1.5rem;
+
+  input {
+    width: 100%;
+    flex: 1;
+    height: 25px;
+    border: 2px solid #595f61;
+    background-color: #17044a;
+    color: #ffffff;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    padding: 0.5rem 0.75rem;
+    letter-spacing: 0.05ch;
+    border-right: none;
+  }
+
+  input:hover, input:focus {
+    outline: none;
+    border-color: #595f61;
+  }
+
+  input::placeholder {
+    color: #a9a9a9;
+    font-style: italic;
+  }
+
+  button {
+    border-top-right-radius: 8px;
+    border-bottom-right-radius: 8px;
+    background-color: #17044a;
+    cursor: pointer;
+    border: 1px solid #595f61;
+    outline: none;
+    padding: 0.5rem 0.75rem;
+  }
+
+  button:focus,
+  button:focus-visible {
+    outline: 4px auto -webkit-focus-ring-color;
+  }
+}
