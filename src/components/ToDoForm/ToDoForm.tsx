@@ -1,14 +1,34 @@
+import { SubmitEvent, useState } from "react";
+import { v7 as uuidv7 } from "uuid";
 import "./ToDoForm.css";
+import { ToDo } from "../../types";
 
-export default function ToDoForm() {
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+interface ToDoFormProps {
+  onSubmit: (todo: ToDo) => void;
+}
+
+export default function ToDoForm({ onSubmit }: ToDoFormProps) {
+  const [todo, setTodo] = useState("");
+
+  const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
     e.preventDefault();
-    console.log("form value: ", e.currentTarget.value);
+
+    const todoItem: ToDo = {
+      id: uuidv7(),
+      isDone: false,
+      name: todo,
+    };
+
+    onSubmit(todoItem);
   };
 
   return (
     <form className="todo-form" onSubmit={handleSubmit}>
-      <input placeholder="What would you like to do today?" />
+      <input
+        placeholder="What would you like to do today?"
+        value={todo}
+        onChange={(e) => setTodo(e.target.value)}
+      />
       <button type="submit">Add</button>
     </form>
   );
