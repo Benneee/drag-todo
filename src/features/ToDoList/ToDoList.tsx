@@ -53,7 +53,7 @@ export function ToDoList() {
   const completedToDos = allToDos.filter((todo) => todo.isDone === true);
 
   return (
-    <main>
+    <main className="simple-todos">
       <h2 className="text-center">Manage your todos below</h2>
       <div className="todo-card">
         <ToDoForm onSubmit={handleAddToDo} />
