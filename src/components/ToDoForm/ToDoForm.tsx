@@ -20,6 +20,7 @@ export default function ToDoForm({ onSubmit }: ToDoFormProps) {
     };
 
     onSubmit(todoItem);
+    setTodo("");
   };
 
   return (
