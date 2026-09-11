@@ -1,0 +1,63 @@
+.advanced-todos {
+  padding: 32px;
+
+  @media only screen and (max-width: 768px) {
+    padding: 20px;
+  }
+}
+
+.todos-board {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 30px;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+.todos-column {
+    flex-shrink: 0;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    width: calc(100vw - 50px);
+    max-width: 250px
+}
+
+.todos-column:first-of-type {
+    padding-left: 0px;
+}
+
+/* Medium devices (Tablets, 768px and up -> col-md-8 width) */
+@media (min-width: 768px) {
+  .todos-column {
+    max-width: 350px
+  }
+}
+
+/* Large devices (Desktops, 992px and up -> col-lg-4 width) */
+@media (min-width: 992px) {
+  .todos-column {
+    max-width: 350px
+  }
+}
+
+.container-card {
+  border-radius: 8px;
+  border: 1px solid black;
+  background: #794ae8;
+  padding: 20px;
+  width: 100%;
+  @media only screen and (max-width: 768px) {
+    padding: 14px;
+  }
+  min-height: 450px;
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+.column-title {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
