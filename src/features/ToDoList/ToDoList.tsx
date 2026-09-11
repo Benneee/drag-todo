@@ -1,3 +1,4 @@
+import { EmptyState } from "../../components/EmptyState/EmptyState";
 import ToDoForm from "../../components/ToDoForm/ToDoForm";
 import ToDoItem from "../../components/ToDoItem/ToDoItem";
 import { useAddTodo, useDeleteTodo, useMarkAsDone, useTodosStore } from "../../hooks/use-todos";
@@ -35,7 +36,7 @@ export function ToDoList() {
       <h2 className="text-center">Manage your todos below</h2>
       <div className="todo-card">
         <ToDoForm onSubmit={handleAddToDo} />
-        <div className="todo-list">{toDoList}</div>
+        {allToDos.length > 0 ? <div className="todo-list">{toDoList}</div> : <EmptyState />}
       </div>
     </main>
   );
