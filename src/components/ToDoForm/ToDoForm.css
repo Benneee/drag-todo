@@ -15,6 +15,9 @@
     padding: 0.5rem 0.75rem;
     letter-spacing: 0.05ch;
     border-right: none;
+
+    /* disable zoom on focus on input */
+    font-size: max(16px, 1rem);
   }
 
   input:hover, input:focus {
