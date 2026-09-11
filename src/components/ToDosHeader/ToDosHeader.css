@@ -14,11 +14,21 @@ header {
     padding: 0.5rem 2rem;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     z-index: 1000;
+
+    @media (max-width: 1024px) {
+        padding: 0.25rem 1rem;
+    }
 }
 
 .header-links {
     display: flex;
     gap: 1rem;
+
+    @media (max-width: 1024px) {
+        a {
+            font-size: 14px;
+        }
+    }
 }
 
 a {
