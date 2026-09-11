@@ -1,4 +1,5 @@
 import { Trash2Icon } from "@animateicons/react/lucide";
+import cx from "clsx";
 import "./ToDoItem.css";
 import { ToDo } from "../../types";
 
@@ -33,7 +34,7 @@ export default function ToDoItem({ onDeleteToDo, onMarkAsDone, todo }: ToDoItemP
           onChange={handleMarkAsDone}
           checked={todo.isDone}
         />
-        <p className={todo.isDone ? "strikethrough" : ""}>{todo.name}</p>
+        <p className={cx("item-name", { strikethrough: todo.isDone })}>{todo.name}</p>
       </div>
       <div className="todo-item--trash">
         <Trash2Icon onClick={handleDeleteTodo} size={24} color="#17044a" className="trash-icon" />

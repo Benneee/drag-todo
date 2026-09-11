@@ -18,8 +18,9 @@
     justify-content: start;
     align-items: center;
 
-    p {
+    .item-name {
         margin: 0;
+        font-weight: 700;
         font-size: 14px;
     }
 }

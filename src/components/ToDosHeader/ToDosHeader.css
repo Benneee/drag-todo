@@ -18,29 +18,34 @@ header {
     @media (max-width: 1024px) {
         padding: 0.25rem 1rem;
     }
+
+    a {
+        color: #fff;
+        text-decoration: none;
+    }
 }
 
 .header-links {
     display: flex;
     gap: 1rem;
 
+    a {
+        color: #fff;
+        text-decoration: none;
+        transition: color 0.2s ease;
+    }
+
+    a:hover {
+        text-decoration: underline;
+        scale: 1.02;
+        transition: scale 0.3s ease;
+    }
+
     @media (max-width: 1024px) {
         a {
             font-size: 14px;
         }
     }
-}
-
-a {
-    color: #fff;
-    text-decoration: none;
-    transition: color 0.2s ease;
-}
-
-a:hover {
-    text-decoration: underline;
-    scale: 1.02;
-    transition: scale 0.3s ease;
 }
 
 .text-heading {
