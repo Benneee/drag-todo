@@ -1,8 +1,16 @@
+import { Outlet } from "react-router";
 import "./App.css";
-import { ToDoList } from "./components/ToDoList/ToDoList";
+import { ToDosHeader } from "./components/ToDosHeader/ToDosHeader";
 
 function App() {
-  return <ToDoList />;
+  return (
+    <>
+      <ToDosHeader />
+      <div>
+        <Outlet />
+      </div>
+    </>
+  );
 }
 
 export default App;

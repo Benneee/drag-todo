@@ -1,5 +1,5 @@
-import ToDoForm from "../ToDoForm/ToDoForm";
-import ToDoItem from "../ToDoItem/ToDoItem";
+import ToDoForm from "../../components/ToDoForm/ToDoForm";
+import ToDoItem from "../../components/ToDoItem/ToDoItem";
 import { useAddTodo, useDeleteTodo, useMarkAsDone, useTodosStore } from "../../hooks/use-todos";
 import { ToDo } from "../../types";
 import "./ToDoList.css";
@@ -32,7 +32,7 @@ export function ToDoList() {
 
   return (
     <main>
-      <h1> ToDo List</h1>
+      <h2 className="text-center">Manage your todos below</h2>
       <div className="todo-card">
         <ToDoForm onSubmit={handleAddToDo} />
         <div className="todo-list">{toDoList}</div>

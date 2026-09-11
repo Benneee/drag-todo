@@ -4,6 +4,7 @@ main {
   flex-direction: column;
   max-width: 600px;
   max-height: 100vh;
+  padding: 2rem;
 }
 
 .todo-card {
@@ -21,4 +22,8 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+}
+
+.text-center {
+    text-align: center;
 }
