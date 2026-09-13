@@ -1,5 +1,8 @@
+type ToDoStatus = "done" | "pending" | "inProgress";
+
 export interface ToDo {
-  isDone: boolean;
+  status: ToDoStatus;
   name: string;
   id: string; // use the uuid library
+  createdAt?: string;
 }
