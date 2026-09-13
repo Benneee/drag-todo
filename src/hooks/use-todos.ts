@@ -37,8 +37,10 @@ export const useTodosStore = create<TodosState>()(
       },
       markToDoAsDone: (todo: ToDo) => {
         const existingToDos: ToDo[] = get().todos;
-        const updatedToDos = existingToDos.map((item) =>
-          item.id === todo.id ? { ...item, isDone: !item.isDone } : item,
+        const updatedToDos: ToDo[] = existingToDos.map((item: ToDo) =>
+          item.id === todo.id
+            ? { ...item, status: item.status === "done" ? "pending" : "done" }
+            : item,
         );
         set({ todos: updatedToDos });
         return updatedToDos;

@@ -50,7 +50,7 @@ export function ToDoList() {
       todo={todo}
     />
   ));
-  const completedToDos = allToDos.filter((todo) => todo.isDone === true);
+  const completedToDos = allToDos.filter((todo) => todo.status === "done");
 
   return (
     <main className="simple-todos">
