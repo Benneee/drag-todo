@@ -4,6 +4,15 @@
     background: #33146E;
     padding: 10px;
     box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.3);
+
+    -webkit-user-select: none; /* Safari and iOS Safari */
+    user-select: none;         /* Modern browsers (Chrome, Firefox, Edge, Opera) */
+
+    cursor: grab;
+}
+
+.todo-item-card::hover {
+    cursor: move;
 }
 
 .todo-item-card--name {
