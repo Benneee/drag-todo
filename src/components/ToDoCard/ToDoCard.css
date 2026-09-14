@@ -1,0 +1,18 @@
+.todo-item-card {
+    border-radius: 4px;
+    border: 1px solid #17044a;
+    background: #33146E;
+    padding: 10px;
+    box-shadow: 10px 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+.todo-item-card--name {
+    margin-top: 0;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.todo-item-card--date {
+    font-size: 12px;
+    color: darkgrey;
+}
