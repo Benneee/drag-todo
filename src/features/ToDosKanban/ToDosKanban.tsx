@@ -1,25 +1,26 @@
+import { ToDosColumn } from "../../components/ToDosColumn/ToDosColumn";
+import { useTodosStore } from "../../hooks/use-todos";
 import "./ToDosKanban.css";
 
 export function ToDosKanban() {
+  const allToDos = useTodosStore((state) => state.todos);
+  const pendingToDos = allToDos.filter((todo) => todo.status === "pending");
+  const completedToDos = allToDos.filter((todo) => todo.status === "done");
+  const inProgressToDos = allToDos.filter((todo) => todo.status === "inProgress");
+
   return (
     <main className="advanced-todos">
       <h2>Track all your todos here</h2>
 
       <div className="todos-board">
-        <div className="todos-column">
-          <h3 className="column-title">To Do</h3>
-          <div className="container-card"></div>
-        </div>
+        {/*Pending*/}
+        <ToDosColumn columnTitle="To Do" todos={pendingToDos} />
 
-        <div className="todos-column">
-          <h3 className="column-title">In Progress</h3>
-          <div className="container-card"></div>
-        </div>
+        {/*In Progress*/}
+        <ToDosColumn columnTitle="In Progress" todos={inProgressToDos} />
 
-        <div className="todos-column">
-          <h3 className="column-title">Completed</h3>
-          <div className="container-card"></div>
-        </div>
+        {/*Completed*/}
+        <ToDosColumn columnTitle="Completed" todos={completedToDos} />
       </div>
     </main>
   );
