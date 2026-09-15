@@ -46,3 +46,9 @@
   flex-direction: column;
   gap: 16px;
 }
+
+.container-card--over {
+  border-color: #794ae8;
+  background: rgba(121, 74, 232, 0.12);
+  box-shadow: 0 0 0 3px rgba(121, 74, 232, 0.2);
+}
