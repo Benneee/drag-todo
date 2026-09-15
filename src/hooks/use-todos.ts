@@ -8,7 +8,6 @@ interface TodosState {
   addTodo: (todo: ToDo) => void;
   deleteTodo: (todo: ToDo) => void;
   deleteAllTodos: () => void;
-  markToDoAsDone: (todo: ToDo) => void;
   updateToDoStatus: (newStatus: ToDoStatus, todo: ToDo) => void;
 }
 
@@ -36,16 +35,6 @@ export const useTodosStore = create<TodosState>()(
         set({ todos: updatedToDos });
         return updatedToDos;
       },
-      markToDoAsDone: (todo: ToDo) => {
-        const existingToDos: ToDo[] = get().todos;
-        const updatedToDos: ToDo[] = existingToDos.map((item: ToDo) =>
-          item.id === todo.id
-            ? { ...item, status: item.status === "done" ? "pending" : "done" }
-            : item,
-        );
-        set({ todos: updatedToDos });
-        return updatedToDos;
-      },
       updateToDoStatus: (newStatus: ToDoStatus, todo: ToDo) => {
         const existingToDos: ToDo[] = get().todos;
         const updatedToDos: ToDo[] = existingToDos.map((item: ToDo) =>
@@ -70,11 +59,6 @@ export function useAddTodo() {
 export function useDeleteTodo() {
   const removeFromToDos = useTodosStore((state) => state.deleteTodo);
   return (payload: ToDo) => removeFromToDos(payload);
-}
-
-export function useMarkAsDone() {
-  const markToDoAsDone = useTodosStore((state) => state.markToDoAsDone);
-  return (payload: ToDo) => markToDoAsDone(payload);
 }
 
 export function useClearToDos() {

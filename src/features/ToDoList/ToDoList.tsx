@@ -7,8 +7,8 @@ import {
   useAddTodo,
   useClearToDos,
   useDeleteTodo,
-  useMarkAsDone,
   useTodosStore,
+  useUpdateToDoStatus,
 } from "../../hooks/use-todos";
 import { ToDo } from "../../types";
 import "./ToDoList.css";
@@ -19,9 +19,9 @@ export function ToDoList() {
     addToDo(todo);
   };
 
-  const markToDoAsDone = useMarkAsDone();
+  const markToDoAsDone = useUpdateToDoStatus();
   const handleMarkAsDone = (todo: ToDo) => {
-    markToDoAsDone(todo);
+    markToDoAsDone("done", todo);
   };
 
   const deleteToDo = useDeleteTodo();
