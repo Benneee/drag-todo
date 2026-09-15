@@ -1,54 +1,24 @@
-# React + TypeScript + Vite
+## Drag ToDo
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+I was bored on holiday and decided to have some fun writing code for a ToDo app with React, because why not? :)
 
-Currently, two official plugins are available:
+I've always wanted to do a drag and drop thing (I probably have an HTML5 implementation somewhere in my repo) but I didn't want to spend too much time on what's supposed to be a fun app, plus I was on holiday :), so react-dnd made things easy.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+If I have some time later, I could explore using the Touch-Backend so I can make this work properly on mobile, for now, I'm done :)
 
-## Expanding the ESLint configuration
+Two parts of the app
+- Simple ToDos
+- "Advanced" ToDos
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+While simple todos is where you can add todos and have them show up in a simple list, advanced ToDos is a kanban board format where you can move the todos around.
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+### Tools Used
+- react, of course
+- zustand for state management
+- react-dnd for the drag and drop tricks
+- clsx for some css thing
+- dayjs because I'm lazy
+- uuid for todo id generation
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+Cheers!
